@@ -14,11 +14,11 @@ class EventObserver
      */
     public function created(Event $event): void
     {
-       Notification::send(auth()->user(), new EventNotification(
-           $event->user->name,
-           $event->title,
-           EventStatus::CREATED
-       ));
+        Notification::send(auth()->user(), new EventNotification(
+            $event->user->name,
+            $event->title,
+            EventStatus::CREATED
+        ));
     }
 
     /**

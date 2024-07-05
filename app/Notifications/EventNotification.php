@@ -3,7 +3,6 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -35,9 +34,9 @@ class EventNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line('Hello ' . $this->username)
-                    ->line('Your event ' . $this->eventTitle . ' has been ' . $this->status)
-                    ->line('Thank you for using our application!');
+            ->line('Hello '.$this->username)
+            ->line('Your event '.$this->eventTitle.' has been '.$this->status)
+            ->line('Thank you for using our application!');
     }
 
     /**

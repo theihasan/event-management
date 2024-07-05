@@ -24,7 +24,7 @@ class EventStoreRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
-            'date' => ['required', 'date', 'after_or_equal:today'],
+            'date' => ['required', 'datetime', 'after_or_equal:today'],
             'location' => ['required', 'string', 'max:255'],
         ];
     }

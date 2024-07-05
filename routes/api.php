@@ -16,5 +16,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::delete('/events/{event}', [EventController::class, 'destroy']);
 });
 
-
 require __DIR__.'/auth.php';

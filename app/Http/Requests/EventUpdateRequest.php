@@ -24,7 +24,7 @@ class EventUpdateRequest extends FormRequest
         return [
             'title' => ['nullable', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'date' => ['nullable', 'date', 'after_or_equal:today'],
+            'date' => ['nullable', 'datetime', 'after_or_equal:today'],
             'location' => ['nullable', 'string', 'max:255'],
         ];
     }
@@ -34,7 +34,6 @@ class EventUpdateRequest extends FormRequest
      *
      * @return array<string, string>
      */
-
     public function messages(): array
     {
         return [
@@ -47,6 +46,4 @@ class EventUpdateRequest extends FormRequest
             'location.max' => 'Location should not be greater than 255 characters',
         ];
     }
-
-
 }
