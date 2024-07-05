@@ -30,6 +30,24 @@
     <h2>Base URL</h2>
     <p>The base URL for all API endpoints is: <code>http://localhost:8000/api</code></p>
     <h2>Endpoints</h2>
+        <h2>Authentication Endpoints</h2>
+    <h3>POST /register</h3>
+    <p>Register a new user.</p>
+    <pre><code>curl -X POST http://localhost:8000/api/register \
+    -H "Content-Type: application/json" \
+    -d '{
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "password": "password",
+        "password_confirmation": "password"
+    }'</code></pre>
+    <p><strong>Response:</strong></p>
+    <pre><code>{
+    "message": "User registered successfully"
+}</code></pre>
+    <h3>POST /login</h3>
+    <p>Login an existing user.</p>
+    <pre><code>
     <h3>GET /api/events</h3>
     <p>Retrieve a list of all events.</p>
     <pre><code>curl -X GET http://localhost:8000/api/events</code></pre>
