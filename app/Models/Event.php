@@ -18,9 +18,6 @@ class Event extends Model
         'user_id',
     ];
 
-    public static function create(mixed $validated)
-    {
-    }
 
     public function user(): BelongsTo
     {
