@@ -24,7 +24,7 @@ class EventUpdateRequest extends FormRequest
         return [
             'title' => ['nullable', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'date' => ['nullable', 'datetime', 'after_or_equal:today'],
+            'date' => ['nullable', 'date', 'after_or_equal:today'],
             'location' => ['nullable', 'string', 'max:255'],
         ];
     }
