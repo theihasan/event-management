@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+
+use App\Models\Event;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Event as EventFacade;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +15,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        EventFacade::fake();
 
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        Event::withoutEvents(function () {
+            Event::factory(40)->create();
+        });
+
+
     }
 }
