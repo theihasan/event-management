@@ -18,7 +18,7 @@ class EventController extends Controller
     {
         Gate::authorize('viewAny', Event::class);
 
-        return EventResource::collection(Event::paginate(10));
+        return EventResource::collection(Event::paginate(request()->query('per_page', 10)));
     }
 
     public function store(EventStoreRequest $request, EventService $eventService): JsonResponse
