@@ -14,7 +14,7 @@ class EventObserver
      */
     public function created(Event $event): void
     {
-        Notification::send(auth()->user(), new EventNotification(
+        Notification::send($event->user, new EventNotification(
             $event->user->name,
             $event->title,
             EventStatus::CREATED
@@ -26,7 +26,7 @@ class EventObserver
      */
     public function updated(Event $event): void
     {
-        Notification::send(auth()->user(), new EventNotification(
+        Notification::send($event->user, new EventNotification(
             $event->user->name,
             $event->title,
             EventStatus::UPDATED
@@ -38,7 +38,7 @@ class EventObserver
      */
     public function deleted(Event $event): void
     {
-        Notification::send(auth()->user(), new EventNotification(
+        Notification::send($event->user, new EventNotification(
             $event->user->name,
             $event->title,
             EventStatus::DELETED

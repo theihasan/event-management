@@ -21,7 +21,7 @@ class EventFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
-            'date' => $this->faker->date,
+            'date' => date('Y-m-d H:i:s'),
             'location' => $this->faker->address,
             'user_id' => User::pluck('id')->random(),
         ];
